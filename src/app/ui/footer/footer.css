@@ -1,0 +1,21 @@
+.footer{
+    background-color: #121212;
+    color: white;
+    padding: 40px 0;
+    margin-top: 80px;
+}
+
+.footer h3{
+    color: #dc3545;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    letter-spacing: 2px;
+}
+
+.footer p{
+    color: #bdbdbd;
+}
+
+.copyright{
+    margin-top: 20px;
+    font-size: 14px;
+}

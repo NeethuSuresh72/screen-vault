@@ -1,0 +1,75 @@
+.about-card{
+    position:relative;
+    height:100%;
+    background:linear-gradient(160deg, #171717, #121212);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:14px;
+    padding:26px 22px 24px;
+    overflow:hidden;
+    transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+
+.about-card:hover{
+    transform:translateY(-6px);
+    border-color:rgba(229,9,20,0.45);
+    box-shadow:0 16px 32px -12px rgba(229,9,20,0.4);
+}
+
+.about-card__icon{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    background:rgba(229,9,20,0.12);
+    border:1px solid rgba(229,9,20,0.35);
+    font-size:22px;
+    margin-bottom:16px;
+    transition:transform .3s ease;
+}
+
+.about-card:hover .about-card__icon{
+    transform:scale(1.08);
+}
+
+.about-card__title{
+    font-family:'Bebas Neue', sans-serif;
+    font-size:22px;
+    letter-spacing:1px;
+    color:#f5f5f5;
+    margin-bottom:16px;
+}
+
+/* Ticket-stub perforation: dashed tear line with punched notches on either edge */
+.about-card__perforation{
+    position:relative;
+    height:1px;
+    margin:0 -22px 16px;
+    border-top:2px dashed rgba(255,255,255,0.15);
+}
+
+.about-card__notch{
+    position:absolute;
+    top:-9px;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:#181818;
+}
+
+.about-card__notch--left{
+    left:-9px;
+}
+
+.about-card__notch--right{
+    right:-9px;
+}
+
+.about-card__desc{
+    font-family:'Inter', sans-serif;
+    font-size:15px;
+    line-height:1.65;
+    color:#a3a3a3;
+    margin-bottom:0;
+}

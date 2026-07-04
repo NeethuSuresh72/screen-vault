@@ -1,0 +1,25 @@
+.container{
+    min-height:80vh;
+}
+
+h1{
+    font-weight:700;
+}
+
+.text-secondary{
+    font-size:18px;
+}
+
+.btn-outline-danger{
+
+    width:100%;
+    border-radius:10px;
+    transition:.3s;
+
+}
+
+.btn-outline-danger:hover{
+
+    transform:translateY(-2px);
+
+}

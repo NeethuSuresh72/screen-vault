@@ -1,0 +1,58 @@
+<div class="container py-5">
+
+    <a routerLink="/" class="btn btn-outline-light btn-sm mb-4">
+        ← Back to Home
+    </a>
+
+    <h2 class="section-title">{{ title() }}</h2>
+
+    <div class="row g-4">
+
+        @for(movie of movies(); track movie.id){
+
+            <div class="col-lg-3 col-md-6">
+                <app-home-card [movie]="movie"></app-home-card>
+            </div>
+
+        }
+
+    </div>
+
+    @if(error()){
+
+        <p class="text-danger text-center mt-5">
+            Something went wrong loading movies. Please try again later.
+        </p>
+
+    }
+
+    @if(!error()){
+
+        <div class="text-center mt-5">
+
+            @if(hasMore){
+
+                <button
+                    class="btn btn-danger px-4"
+                    [disabled]="loading()"
+                    (click)="loadMore()">
+
+                    @if(loading()){
+                        Loading...
+                    } @else {
+                        Load More
+                    }
+
+                </button>
+
+            } @else if(movies().length > 0){
+
+                <p class="text-secondary">You've reached the end of the list.</p>
+
+            }
+
+        </div>
+
+    }
+
+</div>

@@ -1,0 +1,22 @@
+.navbar{
+    background-color: #121212 !important;
+}
+
+.navbar-brand{
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: #dc3545 !important;
+    letter-spacing: 2px;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+.nav-link{
+    color: white !important;
+    margin-left: 20px;
+}
+
+.nav-link:hover{
+    color: #ff4d4d !important;
+}

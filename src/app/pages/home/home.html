@@ -1,0 +1,83 @@
+<app-home-carousel></app-home-carousel>
+
+<div class="container py-5">
+
+    <!-- Trending -->
+
+    <div class="d-flex justify-content-between align-items-center">
+
+        <h2 class="section-title">🔥 Trending Movies</h2>
+
+        <a routerLink="/movies/trending" class="btn btn-outline-danger btn-sm mb-3">
+            View More
+        </a>
+
+    </div>
+
+    <div class="row g-4">
+
+        @for(movie of trendingMovies(); track movie.id){
+
+            <div class="col-lg-3 col-md-6">
+
+                <app-home-card [movie]="movie"></app-home-card>
+
+            </div>
+
+        }
+
+    </div>
+
+    <!-- Popular -->
+
+    <div class="d-flex justify-content-between align-items-center mt-5">
+
+        <h2 class="section-title">⭐ Popular Movies</h2>
+
+        <a routerLink="/movies/popular" class="btn btn-outline-danger btn-sm mb-3">
+            View More
+        </a>
+
+    </div>
+
+    <div class="row g-4">
+
+        @for(movie of popularMovies(); track movie.id){
+
+            <div class="col-lg-3 col-md-6">
+
+                <app-home-card [movie]="movie"></app-home-card>
+
+            </div>
+
+        }
+
+    </div>
+
+    <!-- Top Rated -->
+
+    <div class="d-flex justify-content-between align-items-center mt-5">
+
+        <h2 class="section-title">🏆 Top Rated Movies</h2>
+
+        <a routerLink="/movies/top_rated" class="btn btn-outline-danger btn-sm mb-3">
+            View More
+        </a>
+
+    </div>
+
+    <div class="row g-4">
+
+        @for(movie of topRatedMovies(); track movie.id){
+
+            <div class="col-lg-3 col-md-6">
+
+                <app-home-card [movie]="movie"></app-home-card>
+
+            </div>
+
+        }
+
+    </div>
+
+</div>

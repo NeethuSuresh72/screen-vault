@@ -1,0 +1,24 @@
+.section-title{
+    color:white;
+    font-weight:700;
+    margin-bottom:25px;
+    word-break:break-word;
+}
+
+.search-hint{
+    color:#a3a3a3;
+    font-size:16px;
+}
+
+.back-home{
+    display:inline-block;
+    color:#a3a3a3;
+    text-decoration:none;
+    font-size:14px;
+    margin-bottom:18px;
+    transition:color .2s ease;
+}
+
+.back-home:hover{
+    color:#e50914;
+}

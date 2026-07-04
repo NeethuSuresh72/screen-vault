@@ -1,0 +1,172 @@
+@if(movie(); as movie){
+
+<div class="container py-5">
+
+    <a routerLink="/" class="btn btn-outline-light mb-4">
+        ← Back to Home
+    </a>
+
+    <div class="row">
+
+        <div class="col-lg-4 mb-4">
+
+            <img
+                class="img-fluid rounded shadow"
+                [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+                [alt]="movie.title">
+
+        </div>
+
+        <div class="col-lg-8 text-white">
+
+            <h1>{{ movie.title }}</h1>
+
+            <h5 class="text-warning mb-3">
+                ⭐ {{ movie.vote_average | number:'1.1-1' }}/10
+            </h5>
+
+            <p>
+                <strong>Release Date:</strong>
+                {{ movie.release_date }}
+            </p>
+
+            <p>
+                <strong>Language:</strong>
+                {{ movie.original_language | uppercase }}
+            </p>
+
+            <p>
+                <strong>Runtime:</strong>
+                {{ movie.runtime }} minutes
+            </p>
+
+            <p>
+                <strong>Genres:</strong>
+
+                @for (genre of movie.genres; track genre.id) {
+
+                    <span class="badge bg-danger me-2">
+                        {{ genre.name }}
+                    </span>
+
+                }
+
+            </p>
+
+            <hr>
+
+            <h4>Overview</h4>
+
+            <p>
+                {{ movie.overview }}
+            </p>
+
+
+            <div class="mt-4">
+
+    <button
+        class="btn btn-warning"
+        (click)="toggleFavorite()">
+
+        @if(isFavorite()){
+
+            💔 Remove from Favorites
+
+        } @else {
+
+            ❤️ Add to Favorites
+
+        }
+
+    </button>
+
+</div>
+
+            @if(trailer()){
+
+                <a
+                    class="btn btn-danger mt-3"
+                    target="_blank"
+                    [href]="'https://www.youtube.com/watch?v=' + trailer()">
+
+                    ▶ Watch Trailer
+
+                </a>
+
+            }
+
+        </div>
+
+    </div>
+
+</div>
+
+} @else {
+
+<div class="text-center text-white py-5">
+
+    <h3>Loading movie...</h3>
+
+</div>
+
+}
+
+<hr class="my-5">
+
+<h3 class="section-heading mb-4">
+    🎭 Cast
+</h3>
+
+<div class="cast-container">
+
+    @for(actor of cast(); track actor.id){
+
+        <div class="cast-item">
+
+            @if(actor.profile_path){
+
+                <img
+                    [src]="'https://image.tmdb.org/t/p/w300' + actor.profile_path"
+                    [alt]="actor.name"
+                    class="cast-image">
+
+            } @else {
+
+                <img
+                    src="https://placehold.co/300x300?text=No+Photo"
+                    class="cast-image"
+                    alt="No Image">
+
+            }
+
+            <h6>{{ actor.name }}</h6>
+
+            <small>{{ actor.character }}</small>
+
+        </div>
+
+    }
+
+</div>
+
+<hr class="my-5">
+
+<h3 class="section-heading mb-4">
+    🎬 Similar Movies
+</h3>
+
+<div class="row g-4">
+
+    @for(movie of similarMovies().slice(0,4); track movie.id){
+
+        <div class="col-lg-3 col-md-4 col-sm-6">
+
+            <app-home-card
+                [movie]="movie">
+            </app-home-card>
+
+        </div>
+
+    }
+
+</div>

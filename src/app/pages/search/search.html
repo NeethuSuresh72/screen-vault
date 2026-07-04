@@ -1,0 +1,60 @@
+<div class="container py-5">
+
+    <a routerLink="/" class="back-home">← Back to Home</a>
+
+    <h2 class="section-title">🔍 Search results for "{{ query() }}"</h2>
+
+    @if(!query().trim()){
+
+        <p class="search-hint">Type something into the search bar above to find movies.</p>
+
+    }
+
+    @if(query().trim() && !loading() && movies().length === 0 && !errorMessage()){
+
+        <p class="search-hint">No movies found for "{{ query() }}". Try a different title.</p>
+
+    }
+
+    <div class="row g-4">
+
+        @for(movie of movies(); track movie.id){
+
+            <div class="col-lg-3 col-md-6">
+
+                <app-home-card [movie]="movie"></app-home-card>
+
+            </div>
+
+        }
+
+    </div>
+
+    @if(errorMessage()){
+
+        <p class="text-danger text-center mt-4">{{ errorMessage() }}</p>
+
+    }
+
+    @if(query().trim() && movies().length > 0 && !errorMessage()){
+
+        <div class="text-center mt-5">
+
+            <button
+                class="btn btn-danger px-4"
+                [disabled]="loading()"
+                (click)="loadMore()">
+
+                @if(loading()){
+                    Loading...
+                } @else {
+                    Load More
+                }
+
+            </button>
+
+        </div>
+
+    }
+
+</div>

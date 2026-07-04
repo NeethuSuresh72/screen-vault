@@ -1,0 +1,11 @@
+:host {
+    display: block;
+    background: #0f0f0f;
+    min-height: 100vh;
+}
+
+.section-title {
+    color: white;
+    font-weight: 700;
+    margin-bottom: 25px;
+}

@@ -1,0 +1,51 @@
+<div class="container py-5">
+
+    <h1 class="text-center text-white mb-5">
+
+        ❤️ My Favorite Movies
+
+    </h1>
+
+    @if(favorites().length === 0){
+
+        <div class="text-center text-secondary">
+
+            <h4>No favorite movies yet.</h4>
+
+            <p>Add movies from the Details page.</p>
+
+        </div>
+
+    } @else {
+
+        <div class="row g-4">
+
+            @for(movie of favorites(); track movie.id){
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+
+                    <app-home-card
+    [movie]="movie">
+</app-home-card>
+
+<div class="text-center mt-3">
+
+    <button
+        class="btn btn-outline-danger"
+        (click)="removeFavorite(movie.id)">
+
+        🗑 Remove
+
+    </button>
+
+</div>
+
+                </div>
+
+            }
+
+        </div>
+
+    }
+
+</div>

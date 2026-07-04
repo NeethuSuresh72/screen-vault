@@ -1,0 +1,52 @@
+.about-kicker{
+    font-family:'Inter', sans-serif;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:#e50914;
+    margin-bottom:10px;
+}
+
+.about-title{
+    font-family:'Bebas Neue', sans-serif;
+    font-size:clamp(2.6rem, 6vw, 4.4rem);
+    line-height:1.05;
+    letter-spacing:1px;
+    color:#f5f5f5;
+    margin-bottom:22px;
+}
+
+.about-text{
+    font-family:'Inter', sans-serif;
+    font-size:17px;
+    line-height:1.8;
+    color:#c9c9c9;
+    max-width:640px;
+}
+
+.about-credit{
+    font-family:'Inter', sans-serif;
+    font-size:14px;
+    color:#7a7a7a;
+    max-width:640px;
+}
+
+.about-credit a{
+    color:#e50914;
+    text-decoration:none;
+    font-weight:500;
+}
+
+.about-credit a:hover{
+    text-decoration:underline;
+}
+
+.about-footer{
+    font-family:'Inter', sans-serif;
+    margin-top:48px;
+    padding-top:20px;
+    border-top:1px dashed #333;
+    font-size:13px;
+    color:#6b6b6b;
+}
